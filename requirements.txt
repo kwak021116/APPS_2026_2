@@ -1,0 +1,7 @@
+# 2026-09-07, Python 3.12에서 검증한 수업용 고정 버전
+langgraph==1.2.11
+langchain-openai==1.6.0
+langchain-core==1.6.2
+python-dotenv==1.2.3
+pydantic==2.13.5
+ipykernel==7.3.0
