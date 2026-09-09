@@ -102,23 +102,8 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 질문할 때는 **오류가 난 셀, 오류의 마지막 5줄, Python 버전, 커널 이름**을 함께 전달합니다. API 키는 캡처하지 않습니다.
 
-## 4. 권장 수업 운영
 
-90~120분 모임을 기준으로 한 주에 핵심 개념 2~3개를 완전히 다룹니다.
-
-- 15~20분: 업무 상황과 자연어 개념 설명
-- 25~35분: 출력과 State를 예측하며 강사와 함께 실행
-- 25~35분: 빈칸, 규칙 변경, 오류 수정 실습
-- 15~20분: 새로운 업무로 전이, Exit ticket, 질문
-
-강사는 LLM이 만든 문장이 같은지보다 다음 **구조적 출력**을 확인합니다.
-
-- Node 전후 State의 변화
-- `HumanMessage → AIMessage(tool_calls) → ToolMessage → AIMessage`
-- 같은/다른 `thread_id`에서 checkpoint가 분리되는지
-- interrupt 전후의 State와 부수효과 Node의 위치
-
-## 5. 3주 종료 기준
+## 4. 3주 종료 기준
 
 학습자가 다음을 **코드를 보지 않고 설명하거나, 제공된 스캐폴드에서 구현**하면 기초 목표를 달성한 것입니다.
 
@@ -129,14 +114,5 @@ OPENAI_API_KEY=your_openai_api_key_here
 - Checkpointer와 `thread_id`의 역할을 설명하고 대화를 분리한다.
 - 위험한 행동 전에 `interrupt()`를 두고 승인과 거부를 모두 처리한다.
 
-## 6. 운영자 배포 전 점검
-
-1. 새 가상환경에서 `python -m pip install -r requirements.txt`를 실행합니다.
-2. `.env.example`에 실제 API 키가 없는지 확인합니다.
-3. `.env`, `*.db`, `*.sqlite*`, 개인 대화 출력을 배포본에서 제외합니다.
-4. Week 0과 Week 2를 API 키 없는 경로에서 `Run All`하여 개념 학습이 중단되지 않는지 확인합니다.
-5. Week 0과 Week 2의 실제 LLM 구간은 교육용 키로 별도 확인합니다.
-6. Week 1과 Week 3을 API 없이 위에서부터 순서대로 실행합니다.
-7. 실습 셀을 완성하지 않아도 다음 필수 셀이 실행되는지 확인합니다.
 
 검증 기준일: 2026-09-09. 패키지 버전은 `requirements.txt`에 고정되어 있습니다.
